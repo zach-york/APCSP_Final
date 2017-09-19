@@ -8,10 +8,9 @@ def main():
 	Philip.speed(1000000)
 
 	setup(Philip)
+	stripes(Philip)
 	blue_field(Philip)
 	draw_all_stars(Philip)
-	stripe_start(Philip)
-	#red_stripes(Philip)
 
 def setup(Philip):
 	Philip.penup()
@@ -23,6 +22,11 @@ def setup(Philip):
 	Philip.pendown()
 
 def blue_field(Philip):
+	Philip.penup()
+	Philip.left(90)
+	Philip.forward(497)
+	Philip.right(90)
+	Philip.pendown()
 	Philip.color("blue")
 	rectangle(Philip, 350, 250, "blue")
 	
@@ -44,7 +48,7 @@ def six_star_setup(Philip):
 	Philip.left(90)
 	Philip.forward(25)
 	Philip.left(90)
-	Philip.forward(25	)
+	Philip.forward(25)
 	Philip.pendown()
 	star(Philip, "white")
 
@@ -60,40 +64,41 @@ def five_star_setup(Philip):
 
 def five_star_line(Philip):
 	for count in range(5):
-	Philip.penup()
-	Philip.forward(50)
-	Philip.pendown()
-	star(Philip, "white")
+		Philip.penup()
+		Philip.forward(50)
+		Philip.pendown()
+		star(Philip, "white")
 	
 
 def six_star_line(Philip):
-	for count in range(6):
-	Philip.penup()
-	Philip.forward(50)
-	Philip.pendown()
-	star(Philip, "white")
+	for count in range(5):
+		Philip.penup()
+		Philip.forward(50)
+		Philip.pendown()
+		star(Philip, "white")
 	
 def draw_all_stars(Philip):
 	draw_first_star(Philip)
-	for count in rnage(4):
 	six_star_line(Philip)
-	five_star_setup(Philip)
-	five_star_line(Philip)
-	six_star_setup(Philip)
-	
-	six_star_line(Philip)
+	for count in range(4):
+		five_star_setup(Philip)
+		five_star_line(Philip)
+		six_star_setup(Philip)
+		six_star_line(Philip)
 
-
-def stripe_start(Philip):
-	Philip.penup()
-	Philip.forward(50)
-	Philip.left(90)
-	Philip.forward(250)
-	Philip.right(90)
-
-def red_stripes(Philip):
+def red_stripe(Philip):
 	Philip.color("red")
-	rectangle(Philip, , 100, "red")	
+	rectangle(Philip, 800, 35.5, "red")	
+
+
+def stripes(Philip):
+	for count in range(7):
+		red_stripe(Philip)
+		Philip.penup()
+		Philip.right(90)
+		Philip.forward(71)
+		Philip.left(90)
+		Philip.pendown()
 
 main()
 turtle.done()
