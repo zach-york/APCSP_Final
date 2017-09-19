@@ -67,46 +67,20 @@ def five_star_line(Philip):
 	
 
 def six_star_line(Philip):
+	for count in range(6):
 	Philip.penup()
 	Philip.forward(50)
 	Philip.pendown()
 	star(Philip, "white")
-	Philip.penup()
-	Philip.forward(50)
-	Philip.pendown()
-	star(Philip, "white")
-	Philip.penup()
-	Philip.forward(50)
-	Philip.pendown()
-	star(Philip, "white")
-	Philip.penup()
-	Philip.forward(50)
-	Philip.pendown()
-	star(Philip, "white")
-	Philip.penup()
-	Philip.forward(50)
-	Philip.pendown()
-	star(Philip, "white")
-
 	
 def draw_all_stars(Philip):
 	draw_first_star(Philip)
+	for count in rnage(4):
 	six_star_line(Philip)
 	five_star_setup(Philip)
 	five_star_line(Philip)
 	six_star_setup(Philip)
-	six_star_line(Philip)
-	five_star_setup(Philip)
-	five_star_line(Philip)
-	six_star_setup(Philip)
-	six_star_line(Philip)
-	five_star_setup(Philip)
-	five_star_line(Philip)
-	six_star_setup(Philip)
-	six_star_line(Philip)
-	five_star_setup(Philip)
-	five_star_line(Philip)
-	six_star_setup(Philip)
+	
 	six_star_line(Philip)
 
 
