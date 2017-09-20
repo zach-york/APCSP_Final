@@ -1,5 +1,4 @@
 import turtle
-from shapes import triangle
 
 def main():
 	Philip = turtle.Turtle()
@@ -7,6 +6,7 @@ def main():
 
 	setup(Philip)
 	top_and_bottom_triangles(Philip)
+	side_triangles(Philip)
 
 def setup(Philip):
 	Philip.penup()
@@ -20,14 +20,45 @@ def setup(Philip):
 
 
 def top_and_bottom_triangles(Philip):
-	for count in range(5):
+	for count in range(10):
 		Philip.color("red")
-		Philip.triangle(Philip, "red")
+		Philip.begin_fill()
+		Philip.right(60)
+		Philip.forward(100)
+		Philip.left(120)
+		Philip.forward(100)
+		Philip.left(120)
+		Philip.forward(100)
+		Philip.end_fill()
+		Philip.left(180)
+		Philip.forward(100)
+
+	Philip.penup()
+	Philip.right(90)
+	Philip.forward(800)
+	Philip.right(90)
+	Philip.forward(1000)
+	Philip.right(180)
+	Philip.pendown()
+	for count in range(10):
+		Philip.color("red")
+		Philip.begin_fill()
+		Philip.left(60)
+		Philip.forward(100)
+		Philip.right(120)
+		Philip.forward(100)
+		Philip.right(120)
+		Philip.forward(100)
+		Philip.end_fill()
+		Philip.right(180)
+		Philip.forward(100)
 
 
 
-#def side_triangles(Philip):
 
+def side_triangles(Philip):
+	for count in range(10):
+		
 
 #def inside_diamonds(Philip):
 
