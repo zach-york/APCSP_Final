@@ -1,0 +1,78 @@
+import turtle
+
+def main():
+	Philip = turtle.Turtle()
+	Philip.pensize(0)
+	Philip.speed(1000000)
+
+	setup(Philip)
+	outline_of_2x2(Philip)
+
+def setup(Philip):
+	Philip.pensize(5)
+	Philip.color("black")
+	Philip.penup()
+	Philip.right(180)
+	Philip.forward(300)
+	Philip.right(90)
+	Philip.forward(100)
+	Philip.right(90)
+	Philip.pendown()
+
+def outline_of_2x2(Philip, ):
+	Philip.forward(100)
+	Philip.left(90)
+	Philip.forward(100)
+	Philip.right(90)
+	Philip.forward(100)
+	Philip.right(90)
+	Philip.forward(100)
+	Philip.left(90)
+	Philip.forward(200)
+	Philip.right(90)
+	Philip.forward(100)
+	Philip.right(90)
+	Philip.forward(200)
+	Philip.left(90)
+	Philip.forward(100)
+	Philip.right(90)
+	Philip.forward(100)
+	Philip.right(90)
+	Philip.forward(100)
+	Philip.left(90)
+	Philip.forward(100)
+	Philip.right(90)
+	Philip.forward(100)
+	Philip.right(90)
+	Philip.forward(200)
+	Philip.right(90)
+	Philip.forward(100)
+	Philip.right(90)
+	Philip.forward(100)
+	Philip.right(90)
+	Philip.forward(100)
+	Philip.right(90)
+	Philip.forward(200)
+	Philip.right(90)
+	Philip.forward(100)
+	Philip.left(90)
+
+	Philip.pensize(2)
+	Philip.forward(50)
+	Philip.left(90)
+	Philip.forward(100)
+	Philip.left(90)
+	Philip.forward(50)
+	Philip.left(90)
+	Philip.forward(50)
+	Philip.left(90)
+	Philip.color("blue")
+	Philip.begin_fill()
+	Philip.forward(100)
+
+
+
+
+
+main()
+turtle.done()
