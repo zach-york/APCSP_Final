@@ -69,6 +69,8 @@ def outline_of_2x2(Philip, ):
 	Philip.color("blue")
 	Philip.begin_fill()
 	Philip.forward(100)
+	Philip.right(180)
+	Philip.forward(100)
 
 
 
