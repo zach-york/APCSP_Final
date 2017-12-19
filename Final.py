@@ -6,7 +6,6 @@ color4 = "yellow"
 color5 = "red"
 color6 = "blue"
 
-
 def main():
 	Philip = turtle.Turtle()
 	Philip.pensize(0)
@@ -18,7 +17,7 @@ def main():
 	outline_of_2x2(Philip)
 
 	#Insert Notation Here
-	turns(Philip, "R")
+	turns(Philip, "Ui")
 	#Insert Notation Here
 
 def setup(Philip):
@@ -34,11 +33,11 @@ def setup(Philip):
  
 def directions(Philip):
 	Philip.write('''
-This is a 2D 2x2 Rubik's cube simulator. At the top (line 21), 
+This is a 2D 2x2 Rubikis cube simulator. At the top (line 20), 
 please input a scramble and the cube will be
 scrambled accordingly
-Moves on a Rubik's cube are as follows:
-U, U' F, F', R, R', L, L', D, D', B and B'
+Moves on a Rubikis cube are as follows:
+U, Ui F, Fi, R, Ri, L, Li, D, Di, B and Bi
 U is the top layer
 F is front face
 R is the right side
@@ -46,8 +45,8 @@ L is the left side
 D is the bottom layer
 B is the back face, opposite the F
 
-A normal move, U, R, L, etc. or a letter without a prime 
-symbol (', U', R', etc.) is clockwise
+A normal move, U, R, L, etc. or a letter without an i or prime 
+symbol (i, Ui, Ri, etc.) is clockwise
 on that face while a prime 
 or inverse move is counter clockwise
 
@@ -213,8 +212,8 @@ def side_rectangle(Philip):
 
 
 def turns(Philip, Notation):
-
-	if Notation == "U" or "U'" or "R" or "R'" or "L" or "L'" or "B" or "B'" or "D" or "D'" or "F" or "F'":
+	print Notation
+	if Notation == "U" or "Ui" or "R" or "Ri" or "L" or "Li" or "B" or "Bi" or "D" or "Di" or "F" or "Fi":
 		if Notation == "U":
 			Philip.color(color2)
 			top_rectangle(Philip)
@@ -231,7 +230,7 @@ def turns(Philip, Notation):
 			Philip.forward(300)
 			Philip.right(180)
 			outline_of_2x2(Philip)
-		elif Notation == "U'":
+		elif Notation == "Ui":
 			Philip.color(color6)
 			top_rectangle(Philip)
 			Philip.forward(100)
@@ -268,7 +267,7 @@ def turns(Philip, Notation):
 			Philip.forward(300)
 			Philip.right(180)
 			outline_of_2x2(Philip)
-		elif Notation == "D'":
+		elif Notation == "Di":
 			Philip.right(90)
 			Philip.forward(50)
 			Philip.left(90)
@@ -313,7 +312,7 @@ def turns(Philip, Notation):
 			Philip.forward(350)
 			Philip.right(180)
 			outline_of_2x2(Philip)
-		elif Notation == "R'":
+		elif Notation == "Ri":
 			Philip.forward(150)
 			Philip.color(color3)
 			side_rectangle(Philip)
@@ -361,7 +360,7 @@ def turns(Philip, Notation):
 			Philip.forward(300)
 			Philip.right(180)
 			outline_of_2x2(Philip)
-		elif Notation == "L'":
+		elif Notation == "Li":
 			Philip.forward(100)
 			Philip.color(color4)
 			side_rectangle(Philip)
@@ -410,7 +409,7 @@ def turns(Philip, Notation):
 			Philip.forward(200)
 			Philip.right(180)
 			outline_of_2x2(Philip)
-		elif Notation == "F'":
+		elif Notation == "Fi":
 			Philip.forward(50)
 			Philip.color(color3)
 			side_rectangle(Philip)
@@ -459,7 +458,7 @@ def turns(Philip, Notation):
 			Philip.forward(250)
 			Philip.right(180)
 			outline_of_2x2(Philip)
-		elif Notation == "B'":
+		elif Notation == "Bi":
 			Philip.color(color4)
 			side_rectangle(Philip)
 			Philip.forward(100)
@@ -484,7 +483,7 @@ def turns(Philip, Notation):
 			Philip.right(180)
 			outline_of_2x2(Philip)
 	else:
-		Philip.write("Please enter correct Rubik's Cube notation", align = "right")
+		Philip.write("Please enter correct Rubikis Cube notation", align = "right")
 
 
 
