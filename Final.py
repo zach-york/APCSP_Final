@@ -34,7 +34,7 @@ def setup(Philip):
  
 def directions(Philip):
 	Philip.write('''
-This is a 2D 2x2 Rubik's cube simulator. At the top (line 20), 
+This is a 2D 2x2 Rubik's cube simulator. At the top (line 21), 
 please input a scramble and the cube will be
 scrambled accordingly
 Moves on a Rubik's cube are as follows:
