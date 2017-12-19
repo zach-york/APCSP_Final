@@ -1,4 +1,11 @@
 import turtle
+color1 = "orange"
+color2 = "green"
+color3 = "white"
+color4 = "yellow"
+color5 = "red"
+color6 = "blue"
+
 
 def main():
 	Philip = turtle.Turtle()
@@ -9,6 +16,10 @@ def main():
 	setup(Philip)
 	colors(Philip)
 	outline_of_2x2(Philip)
+
+	#Insert Notation Here
+	turns(Philip, "R")
+	#Insert Notation Here
 
 def setup(Philip):
 	Philip.pensize(5)
@@ -23,28 +34,31 @@ def setup(Philip):
  
 def directions(Philip):
 	Philip.write('''
-This is a 2D 2x2 Rubik's cube simulator. At the bottom, 
+This is a 2D 2x2 Rubik's cube simulator. At the top (line 20), 
 please input a scramble and the cube will be
- scrambled accordingly
+scrambled accordingly
 Moves on a Rubik's cube are as follows:
 U, U' F, F', R, R', L, L', D, D', B and B'
 U is the top layer
 F is front face
 R is the right side
-L is the left side
+L is the left side 	
 D is the bottom layer
 B is the back face, opposite the F
 
 A normal move, U, R, L, etc. or a letter without a prime 
 symbol (', U', R', etc.) is clockwise
- on that face while a prime 
+on that face while a prime 
 or inverse move is counter clockwise
 
-The move U R U' R' has been preset
+Only one move at a time is allowed on this 2x2, which will be reset every time
+
+Have Fun
 ''', align="left", font=("Arial", 10, "normal"))
 
 def outline_of_2x2(Philip):
 	#outline
+	Philip.pensize(5)
 	Philip.pendown()
 	Philip.color("black")
 	Philip.forward(100)
@@ -137,13 +151,6 @@ def outline_of_2x2(Philip):
 
 
 def colors(Philip):
-	color1 = "orange"
-	color2 = "green"
-	color3 = "white"
-	color4 = "yellow"
-	color5 = "red"
-	color6 = "blue"
-
 	Philip.color(color1)
 	square(Philip)
 	Philip.forward(100)
@@ -182,16 +189,305 @@ def	square(Philip):
 	Philip.end_fill()
 	Philip.penup()
 
-def turns(Notation):
+def top_rectangle(Philip):
+	Philip.pendown()
+	Philip.begin_fill()
+	for count in range(2):
+		Philip.forward(100)
+		Philip.right(90)
+		Philip.forward(50)
+		Philip.right(90)
+	Philip.end_fill()
+	Philip.penup()
+
+def side_rectangle(Philip):
+	Philip.pendown()
+	Philip.begin_fill()
+	for count in range(2):
+		Philip.forward(50)
+		Philip.right(90)
+		Philip.forward(100)
+		Philip.right(90)
+	Philip.end_fill()
+	Philip.penup()
+
+
+def turns(Philip, Notation):
+
 	if Notation == "U" or "U'" or "R" or "R'" or "L" or "L'" or "B" or "B'" or "D" or "D'" or "F" or "F'":
 		if Notation == "U":
-			print
+			Philip.color(color2)
+			top_rectangle(Philip)
+			Philip.forward(100)
+			Philip.color(color5)
+			top_rectangle(Philip)
+			Philip.forward(100)
+			Philip.color(color6)
+			top_rectangle(Philip)
+			Philip.forward(100)
+			Philip.color(color1)
+			top_rectangle(Philip)
+			Philip.right(180)
+			Philip.forward(300)
+			Philip.right(180)
+			outline_of_2x2(Philip)
+		elif Notation == "U'":
+			Philip.color(color6)
+			top_rectangle(Philip)
+			Philip.forward(100)
+			Philip.color(color1)
+			top_rectangle(Philip)
+			Philip.forward(100)
+			Philip.color(color2)
+			top_rectangle(Philip)
+			Philip.forward(100)
+			Philip.color(color5)
+			top_rectangle(Philip)
+			Philip.right(180)
+			Philip.forward(300)
+			Philip.right(180)
+			outline_of_2x2(Philip)
+		elif Notation == "D":
+			Philip.right(90)
+			Philip.forward(50)
+			Philip.left(90)
+			Philip.color(color6)
+			top_rectangle(Philip)
+			Philip.forward(100)
+			Philip.color(color1)
+			top_rectangle(Philip)
+			Philip.forward(100)
+			Philip.color(color2)
+			top_rectangle(Philip)
+			Philip.forward(100)
+			Philip.color(color5)
+			top_rectangle(Philip)
+			Philip.left(90)
+			Philip.forward(50)
+			Philip.left(90)
+			Philip.forward(300)
+			Philip.right(180)
+			outline_of_2x2(Philip)
+		elif Notation == "D'":
+			Philip.right(90)
+			Philip.forward(50)
+			Philip.left(90)
+			Philip.color(color2)
+			top_rectangle(Philip)
+			Philip.forward(100)
+			Philip.color(color5)
+			top_rectangle(Philip)
+			Philip.forward(100)
+			Philip.color(color6)
+			top_rectangle(Philip)
+			Philip.forward(100)
+			Philip.color(color1)
+			top_rectangle(Philip)
+			Philip.left(90)
+			Philip.forward(50)
+			Philip.left(90)
+			Philip.forward(300)
+			Philip.right(180)
+			outline_of_2x2(Philip)
+		elif Notation == "R":
+			Philip.forward(150)
+			Philip.color(color4)
+			side_rectangle(Philip)
+			Philip.left(90)
+			Philip.forward(100)
+			Philip.right(90)
+			Philip.color(color2)
+			side_rectangle(Philip)
+			Philip.right(90)
+			Philip.forward(200)
+			Philip.left(90)
+			Philip.color(color6)
+			side_rectangle(Philip)
+			Philip.left(90)
+			Philip.forward(100)
+			Philip.right(90)
+			Philip.forward(200)
+			Philip.color(color3)
+			side_rectangle(Philip)
+			Philip.right(180)
+			Philip.forward(350)
+			Philip.right(180)
+			outline_of_2x2(Philip)
+		elif Notation == "R'":
+			Philip.forward(150)
+			Philip.color(color3)
+			side_rectangle(Philip)
+			Philip.left(90)
+			Philip.forward(100)
+			Philip.right(90)
+			Philip.color(color6)
+			side_rectangle(Philip)
+			Philip.right(90)
+			Philip.forward(200)
+			Philip.left(90)
+			Philip.color(color2)
+			side_rectangle(Philip)
+			Philip.left(90)
+			Philip.forward(100)
+			Philip.right(90)
+			Philip.forward(200)
+			Philip.color(color4)
+			side_rectangle(Philip)
+			Philip.right(180)
+			Philip.forward(350)
+			Philip.right(180)
+			outline_of_2x2(Philip)
+		elif Notation == "L":
+			Philip.forward(100)
+			Philip.color(color3)
+			side_rectangle(Philip)
+			Philip.left(90)
+			Philip.forward(100)
+			Philip.right(901)
+			Philip.color(color6)
+			side_rectangle(Philip)
+			Philip.right(90)
+			Philip.forward(200)
+			Philip.left(90)
+			Philip.color(color2)
+			side_rectangle(Philip)
+			Philip.left(90)
+			Philip.forward(100)
+			Philip.right(90)
+			Philip.forward(200)
+			Philip.color(color4)
+			side_rectangle(Philip)
+			Philip.right(180)
+			Philip.forward(300)
+			Philip.right(180)
+			outline_of_2x2(Philip)
+		elif Notation == "L'":
+			Philip.forward(100)
+			Philip.color(color4)
+			side_rectangle(Philip)
+			Philip.left(90)
+			Philip.forward(100)
+			Philip.right(90)
+			Philip.color(color2)
+			side_rectangle(Philip)
+			Philip.right(90)
+			Philip.forward(200)
+			Philip.left(90)
+			Philip.color(color6)
+			side_rectangle(Philip)
+			Philip.left(90)
+			Philip.forward(100)
+			Philip.right(90)
+			Philip.forward(200)
+			Philip.color(color3)
+			side_rectangle(Philip)
+			Philip.right(180)
+			Philip.forward(300)
+			Philip.right(180)
+			outline_of_2x2(Philip)
+		elif Notation == "F":
+			Philip.forward(50)
+			Philip.color(color4)
+			side_rectangle(Philip)
+			Philip.forward(50)
+			Philip.left(90)
+			Philip.forward(50)
+			Philip.right(90)
+			Philip.color(color1)
+			top_rectangle(Philip)
+			Philip.right(90)
+			Philip.forward(150)
+			Philip.left(90)
+			Philip.color(color5)
+			top_rectangle(Philip)
+			Philip.forward(100)
+			Philip.left(90)
+			Philip.forward(100)
+			Philip.right(90)
+			Philip.color(color3)
+			side_rectangle(Philip)
+			Philip.right(180)
+			Philip.forward(200)
+			Philip.right(180)
+			outline_of_2x2(Philip)
+		elif Notation == "F'":
+			Philip.forward(50)
+			Philip.color(color3)
+			side_rectangle(Philip)
+			Philip.forward(50)
+			Philip.left(90)
+			Philip.forward(50)
+			Philip.right(90)
+			Philip.color(color5)
+			top_rectangle(Philip)
+			Philip.right(90)
+			Philip.forward(150)
+			Philip.left(90)
+			Philip.color(color1)
+			top_rectangle(Philip)
+			Philip.forward(100)
+			Philip.left(90)
+			Philip.forward(100)
+			Philip.right(90)
+			Philip.color(color4)
+			side_rectangle(Philip)
+			Philip.right(180)
+			Philip.forward(200)
+			Philip.right(180)
+			outline_of_2x2(Philip)
+		elif Notation == "B":
+			Philip.color(color3)
+			side_rectangle(Philip)
+			Philip.forward(100)
+			Philip.left(90)
+			Philip.forward(100)
+			Philip.right(90)
+			Philip.color(color5)
+			top_rectangle(Philip)
+			Philip.right(90)
+			Philip.forward(250)
+			Philip.left(90)
+			Philip.color(color1)
+			top_rectangle(Philip)
+			Philip.left(90)
+			Philip.forward(150)
+			Philip.right(90)
+			Philip.forward(150)
+			Philip.color(color4)
+			side_rectangle(Philip)
+			Philip.right(180)
+			Philip.forward(250)
+			Philip.right(180)
+			outline_of_2x2(Philip)
+		elif Notation == "B'":
+			Philip.color(color4)
+			side_rectangle(Philip)
+			Philip.forward(100)
+			Philip.left(90)
+			Philip.forward(100)
+			Philip.right(90)
+			Philip.color(color1)
+			top_rectangle(Philip)
+			Philip.right(90)
+			Philip.forward(250)
+			Philip.left(90)
+			Philip.color(color5)
+			top_rectangle(Philip)
+			Philip.left(90)
+			Philip.forward(150)
+			Philip.right(90)
+			Philip.forward(150)
+			Philip.color(color3)
+			side_rectangle(Philip)
+			Philip.right(180)
+			Philip.forward(250)
+			Philip.right(180)
+			outline_of_2x2(Philip)
 	else:
-		print "Please enter correct Rubik's Cube notation"
+		Philip.write("Please enter correct Rubik's Cube notation", align = "right")
 
 
 
 
 main()
-turns("U'")
 turtle.done()
